@@ -31,50 +31,49 @@ function insertTestData() {
     if (row.count <= 0) {
       db.run("INSERT INTO users (id, pic, name, supername, affiliates) VALUES (?, ?, ?, ?, ?)",
         1,
-        'http://triplehq.com/wp-content/uploads/2017/09/Zac-Ali-Bruce-Wayne.jpg',
+        'http://localhost:1337/avatars/1_avatar.jpg',
         'Bruce Wayne',
         'The Batman',
         'Justice League');
       db.run("INSERT INTO users (id, pic, name, supername, affiliates) VALUES (?, ?, ?, ?, ?)",
         2,
-        'https://i.pinimg.com/236x/44/b9/5d/44b95dabec4e1cdd30901505b3bd4ce6--my-crush-clark-kent.jpg',
+        'http://localhost:1337/avatars/2_avatar.jpg',
         'Clark Kent',
         'Superman',
         'Justice League');
       db.run("INSERT INTO users (id, pic, name, supername, affiliates) VALUES (?, ?, ?, ?, ?)",
         3,
-        'https://s-media-cache-ak0.pinimg.com/736x/2d/dd/45/2ddd45f86fe9ef4088af56590e57a3f5.jpg',
+        'http://localhost:1337/avatars/3_avatar.jpg',
         'John Logan',
         'The Wolverine',
         'X-Men');
       db.run("INSERT INTO users (id, pic, name, supername, affiliates) VALUES (?, ?, ?, ?, ?)",
         4,
-        'https://i.pinimg.com/736x/92/23/d2/9223d2f991aed3dfb17394466a7fa4e7--spiderman-marvel-marvel-art.jpg',
+        'http://localhost:1337/avatars/4_avatar.jpg',
         'Miles Morales',
         'Spiderman',
         'The Avengers');
       db.run("INSERT INTO users (id, pic, name, supername, affiliates) VALUES (?, ?, ?, ?, ?)",
         5,
-        'https://i.pinimg.com/736x/be/9c/e5/be9ce571b98855c2b7edfba9fc092731--daredevil-artwork-marvel-daredevil.jpg',
+        'http://localhost:1337/avatars/5_avatar.jpg',
         'Matt Murdock',
         'Daredevil',
         'Defenders');
       db.run("INSERT INTO users (id, pic, name, supername, affiliates) VALUES (?, ?, ?, ?, ?)",
         6,
-        'https://vignette.wikia.nocookie.net/mugen/images/b/bb/Deadpool_Movie.jpg/revision/latest?cb=20161108011949',
+        'http://localhost:1337/avatars/6_avatar.jpg',
         'Wade Wilson',
         'Deadpool',
         'Mercs for Money');
       db.run("INSERT INTO users (id, pic, name, supername, affiliates) VALUES (?, ?, ?, ?, ?)",
         7,
-        'https://vignette.wikia.nocookie.net/watchmen/images/' +
-        '6/67/Comic_Rorschach.jpg/revision/latest/scale-to-width-down/180?cb=20080722170220',
+        'http://localhost:1337/avatars/7_avatar.jpg',
         'Walter Kovacs',
         'Rorschach',
         'Crimebusters');
       db.run("INSERT INTO users (id, pic, name, supername, affiliates) VALUES (?, ?, ?, ?, ?)",
         8,
-        'https://s-media-cache-ak0.pinimg.com/736x/66/a9/7e/66a97e3816fcc472b825234e24962e88.jpg',
+        'http://localhost:1337/avatars/8_avatar.jpg',
         'Hal Jordan',
         'Green Lantern',
         'Green Lantern Corps');
