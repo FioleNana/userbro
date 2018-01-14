@@ -1,0 +1,45 @@
+<div class="users-container">
+  <div class="user-fab ripple" (click)="addUser()">
+    <div class="fab-icon">
+      <span class="far fa-fw fa-plus"></span>
+    </div>
+  </div>
+
+  <div class="user-head">
+    <div class="headpoint id" [class.active]="isCurrentSort('id')" (click)="changeSort('id')">
+      ID
+    </div>
+    <div class="headpoint" [class.active]="isCurrentSort('name')" (click)="changeSort('name')">
+      Name
+    </div>
+    <div class="headpoint super-small-disappear" [class.active]="isCurrentSort('supername')"
+         (click)="changeSort('supername')">
+      Supername!
+    </div>
+    <div class="headpoint small-disappear" [class.active]="isCurrentSort('affiliates')"
+         (click)="changeSort('affiliates')">
+      Affiliates
+    </div>
+  </div>
+  <div id="{{user.id}}" class="user-container" *ngFor="let user of users">
+    <div class="user-details">
+      <div class="id">
+        #{{user.id}}
+      </div>
+      <div class="user-pic">
+        <img [src]="user.pic"/>
+      </div>
+      <div class="user-name">{{user.name}}</div>
+      <div class="user-additional super-small-disappear">{{user.supername}}</div>
+      <div class="user-additional small-disappear">{{user.affiliates}}</div>
+    </div>
+    <div class="user-actions">
+      <div class="action ripple" (click)="editUser(user)">
+        <span class="far fa-edit"></span>
+      </div>
+      <div class="action ripple" (click)="deleteUser(user)">
+        <span class="far fa-times"></span>
+      </div>
+    </div>
+  </div>
+</div>

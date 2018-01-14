@@ -1,0 +1,58 @@
+@import '../../../assets/colors';
+
+.right {
+  float: right;
+}
+
+mat-form-field {
+  display: block;
+  width: 100%;
+}
+
+.revert {
+  cursor: pointer;
+
+  &:hover {
+    animation: spin-icon 1s infinite ease-in-out;
+  }
+}
+
+
+
+.avatarFile {
+  height: 0;
+  width: 0;
+  position: absolute;
+  z-index: -1000;
+  opacity: 0;
+}
+
+.avatarFile + label {
+  width: 250px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background: $color-accent;
+  color: $color-icons;
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+
+  .uploadicon {
+    margin-right: 15px;
+  }
+
+  &:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
+}
+
+
+@keyframes spin-icon {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}

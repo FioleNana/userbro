@@ -1,0 +1,168 @@
+@import '../../assets/colors';
+
+::-moz-selection { /* Code for Firefox */
+  color: #fff;
+  background: $color-primary-dark;
+}
+
+::selection {
+  color: #fff;
+  background: $color-primary-dark;
+}
+
+.users-sidenav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  background: #fff;
+
+}
+
+.users-container {
+  width: 100%;
+  padding-top: 40px;
+
+  .user-fab {
+    display: block;
+    width: 50px;
+    height: 50px;
+    color: $color-icons;
+    background: $color-accent;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 50px;
+    position: absolute;
+    right: 25px;
+    top: -25px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    cursor: pointer;
+
+    .fab-icon {
+      transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    }
+
+    &:hover {
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+
+      .fab-icon {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  .user-head {
+    width: 100%;
+    padding-left: 40px;
+    padding-bottom: 10px;
+
+    .headpoint {
+      width: 200px;
+      display: table-cell;
+      cursor: pointer;
+
+      &.id {
+        width: 140px;
+      }
+
+      &:hover,
+      &.active {
+        font-weight: bolder;
+      }
+
+    }
+  }
+
+  .user-container {
+    display: block;
+    width: 100%;
+    line-height: 40px;
+    border-top: 1px solid $color-divider;
+    position: relative;
+
+    &.blink {
+      .user-details {
+        background: $color-primary-light;
+      }
+    }
+
+    &:last-child {
+      border-bottom: 1px solid $color-divider;
+    }
+
+    &:hover {
+      .user-details {
+        width: calc(100% - 140px);
+      }
+    }
+
+    .user-details {
+      width: 100%;
+      background: #fff;
+      padding: 10px 40px;
+      transition: 0.3s;
+      z-index: 2;
+      position: relative;
+      color: $color-text-primary;
+
+      .id {
+        display: table-cell;
+        float: left;
+        margin-right: 20px;
+        min-width: 50px;
+      }
+
+      .user-name,
+      .user-additional{
+        min-width: 200px;
+        display: table-cell;
+      }
+
+      .user-additional {
+        color: $color-divider;
+      }
+
+      .user-pic {
+        height: 40px;
+        width: 40px;
+        float: left;
+        margin-right: 30px;
+        overflow: hidden;
+        border: 2px solid $color-accent;
+        border-radius: 100%;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    .user-actions {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 10px 20px;
+      line-height: 40px;
+      height: 60px;
+      background: $color-accent;
+      z-index: 1;
+
+      .action {
+        margin-right: 15px;
+        color: $color-icons;
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        text-align: center;
+        cursor: pointer;
+        position: relative;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

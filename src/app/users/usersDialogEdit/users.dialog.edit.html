@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>Edit: {{data.oldUser.name}}</h1>
+<div mat-dialog-content>
+  <input id="avatarFile" type="file" #avatar (change)="addAvatarToData()"  accept=".jpg, .png, .jpeg" class="avatarFile"/>
+  <label for="avatarFile"><span class="far fa-fw fa-upload uploadicon"></span> {{filelabel}}</label>
+  <mat-form-field>
+    <input matInput placeholder="Name" required [(ngModel)]="data.user.name">
+    <span matPrefix><span class="far fa-fw fa-user"></span></span>
+    <div matSuffix class="revert" (click)="revertField('name')"><span class="far fa-fw fa-undo"></span></div>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Supername" [(ngModel)]="data.user.supername">
+    <span matPrefix><span class="far fa-fw fa-user-secret"></span></span>
+    <div matSuffix class="revert" (click)="revertField('supername')"><span class="far fa-fw fa-undo"></span></div>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Affiliates" [(ngModel)]="data.user.affiliates">
+    <span matPrefix><span class="far fa-fw fa-users"></span></span>
+    <div matSuffix class="revert" (click)="revertField('affiliates')"><span class="far fa-fw fa-undo"></span></div>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions class="right">
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="data" [disabled]="!canSave()">Save</button>
+</div>

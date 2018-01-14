@@ -1,0 +1,65 @@
+@import '../../assets/colors';
+
+::-moz-selection { /* Code for Firefox */
+  color: #fff;
+  background: $color-accent;
+}
+
+::selection {
+  color: #fff;
+  background: $color-accent;
+}
+
+header {
+  width: 100%;
+  height: 300px;
+  color: $color-icons;
+  padding: 40px;
+  z-index: 1;
+  position: relative;
+
+  .title-icon {
+    background-size: cover;
+    display: inline-block;
+    float: left;
+    margin-right: 15px;
+    height: 60px;
+  }
+
+  .title-text {
+    display: inline-block;
+    font-weight: 300;
+    float: left;
+
+    .title--main {
+      font-size: 30px;
+    }
+  }
+
+  nav {
+    cursor: pointer;
+    padding-right: 25px;
+
+    .user-pic {
+      height: 50px;
+      width: 50px;
+      display: inline-block;
+      float: right;
+
+      img {
+        height: 100%;
+        border: 2px solid $color-accent;
+        border-radius: 100%;
+        display: block;
+      }
+
+      .img-label {
+        display: block;
+        font-size: 10px;
+        width: 100%;
+        line-height: 10px;
+        text-align: center;
+      }
+    }
+  }
+}

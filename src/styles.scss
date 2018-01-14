@@ -1,0 +1,112 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import 'assets/fontawesome/fa-svg-with-js.scss';
+@import 'assets/colors.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  background: #eee;
+}
+
+.blocker {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #aaa;
+  display: none;
+  z-index: 1000;
+
+  .card {
+    position: absolute;
+    height: 200px;
+    width: 300px;
+    padding: 20px;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  }
+
+}
+
+.head-bg {
+  position: fixed;
+  z-index: 0;
+  width: 100%;
+  height: 300px;
+  background: $color-primary-dark;
+}
+
+.content {
+  z-index: 2;
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  top: 150px;
+  background: #fff;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  margin-bottom: 40px;
+}
+
+
+
+.ripple{
+  overflow:hidden;
+}
+
+.ripple-effect{
+  position: absolute;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background: white;
+  animation: ripple-animation 2s;
+}
+
+.mat-simple-snackbar {
+  justify-content: center !important;
+}
+
+@keyframes ripple-animation {
+  from {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  to {
+    transform: scale(100);
+    opacity: 0;
+  }
+}
+
+@media(max-width:1009px) {
+  .small-disappear {
+    display: none !important;
+  }
+}
+
+@media(max-width:809px) {
+  .super-small-disappear {
+    display: none !important;
+  }
+}
+
+@media(max-width:609px) {
+  .blocker {
+    display: inline-block;
+  }
+}
