@@ -114,7 +114,7 @@
       }
 
       .user-name,
-      .user-additional{
+      .user-additional {
         min-width: 200px;
         display: table-cell;
       }
@@ -132,8 +132,11 @@
         border: 2px solid $color-accent;
         border-radius: 100%;
 
-        img {
+        .image {
+          height: 100%;
           width: 100%;
+          border-radius: 100%;
+          background-size: cover;
         }
       }
     }

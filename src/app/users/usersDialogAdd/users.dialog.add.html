@@ -3,8 +3,8 @@
   <div class="picture-area">
     <div class="user-pic">
       <div clasS="img-container">
-        <img [src]="currentUpload" *ngIf="data.avatar"/>
-        <img src="../../../assets/placeholder_user.png" *ngIf="!data.avatar"/>
+        <div class="image" [style.backgroundImage]="'url(' + currentUpload + ')'" *ngIf="data.avatar"></div>
+        <div class="image" style="background-image: url('../../../assets/placeholder_user.png')" *ngIf="!data.avatar"></div>
       </div>
       <span class="img-label">New Picture</span>
     </div>

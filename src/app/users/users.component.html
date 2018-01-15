@@ -27,8 +27,8 @@
         #{{user.id}}
       </div>
       <div class="user-pic">
-        <img [src]="user.pic" *ngIf="user.pic"/>
-        <img src="../../assets/placeholder_user.png" *ngIf="!user.pic"/>
+        <div class="image" [style.backgroundImage]="'url(' + user.pic + ')'" *ngIf="user.pic"></div>
+        <div class="image" style="background-image: url('../../assets/placeholder_user.png')" *ngIf="!user.pic"></div>
       </div>
       <div class="user-name">{{user.name}}</div>
       <div class="user-additional super-small-disappear">{{user.supername}}</div>
