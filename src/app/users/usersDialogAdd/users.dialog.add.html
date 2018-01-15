@@ -1,7 +1,17 @@
 <h1 mat-dialog-title>Add new user</h1>
 <div mat-dialog-content>
-  <input id="avatarFile" type="file" #avatar (change)="addAvatarToData()" accept=".jpg, .png, .jpeg" class="avatarFile"/>
-  <label for="avatarFile"><span class="far fa-fw fa-upload uploadicon"></span> {{filelabel}}</label>
+  <div class="picture-area">
+    <div class="user-pic">
+      <div clasS="img-container">
+        <img [src]="currentUpload" *ngIf="data.avatar"/>
+        <img src="../../../assets/placeholder_user.png" *ngIf="!data.avatar"/>
+      </div>
+      <span class="img-label">New Picture</span>
+    </div>
+    <input id="avatarFile" type="file" #avatar (change)="addAvatarToData($event)" accept=".jpg, .png, .jpeg"
+           class="avatarFile"/>
+    <label for="avatarFile"><span class="far fa-fw fa-upload uploadicon"></span> {{filelabel}}</label>
+  </div>
   <mat-form-field>
     <input matInput placeholder="Name" required [(ngModel)]="data.user.name">
     <span matPrefix><span class="far fa-fw fa-user"></span></span>

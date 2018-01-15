@@ -23,6 +23,10 @@ export class UsersComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getUsers();
+  }
+
+  getUsers() {
     this.usersService.getUsers().subscribe((result: User[]) => {
       this.users = result;
     }, (error) => {
@@ -62,7 +66,12 @@ export class UsersComponent implements OnInit {
     usersDialogEdit.afterClosed().subscribe(result => {
       if (result) {
         this.usersService.editUser(result.user, result.avatar).subscribe((editedUser: User) => {
-          this.users[this.users.indexOf(user)] = editedUser;
+          const indexUser = this.users.indexOf(user);
+          this.users[indexUser] = editedUser;
+
+          // Add random number to URL so the picture refreshes
+          const random = Math.random();
+          this.users[indexUser].pic = this.users[indexUser].pic + '?' + random;
           this.snackbar.open('Successfully saved ' + editedUser.name, '', {
             duration: 3000
           });

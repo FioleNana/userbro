@@ -10,17 +10,26 @@ export class UsersDialogAddComponent {
   @ViewChild('avatar') avatar;
 
   filelabel = 'Upload an avatar';
+  currentUpload = '';
 
   constructor(
     public dialogRef: MatDialogRef<UsersDialogAddComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
 
-  addAvatarToData() {
+  addAvatarToData(event: any) {
     const fileBrowser = this.avatar.nativeElement;
     if (fileBrowser.files && fileBrowser.files[0]) {
       this.data.avatar = fileBrowser.files[0];
       this.filelabel = fileBrowser.files[0].name;
+
+      const reader = new FileReader();
+
+      reader.onload = (onloadEvent: any) => {
+        this.currentUpload = onloadEvent.target.result;
+      };
+
+      reader.readAsDataURL(event.target.files[0]);
     }
   }
 
