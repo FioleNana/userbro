@@ -5,8 +5,6 @@ import {UsersDialogDeleteComponent} from './usersDialogDelete/users.dialog.delet
 import {MatDialog, MatSnackBar} from '@angular/material';
 import {UsersDialogEditComponent} from './usersDialogEdit/users.dialog.edit';
 import {UsersDialogAddComponent} from './usersDialogAdd/users.dialog.add';
-declare var jquery: any;
-declare var $: any;
 
 @Component({
   selector: 'ub-users',
@@ -16,6 +14,8 @@ declare var $: any;
 export class UsersComponent implements OnInit {
 
   currentSort: string;
+
+  blinkuser = -1;
 
   users: User[] = [];
 
@@ -67,9 +67,9 @@ export class UsersComponent implements OnInit {
             duration: 3000
           });
           setTimeout(() => {
-            $('#' + user.id).addClass('blink');
+            this.blinkuser = user.id;
             setTimeout(() => {
-              $('#' + user.id).removeClass('blink');
+              this.blinkuser = -1;
             }, 200);
           }, 100);
         }, (error) => {
@@ -104,9 +104,9 @@ export class UsersComponent implements OnInit {
             duration: 3000
           });
           setTimeout(() => {
-            $('#' + addedUser.id).addClass('blink');
+            this.blinkuser = addedUser.id;
             setTimeout(() => {
-              $('#' + addedUser.id).removeClass('blink');
+              this.blinkuser = -1;
             }, 200);
           }, 100);
         }, (error) => {

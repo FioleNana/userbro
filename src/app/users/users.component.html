@@ -21,7 +21,7 @@
       Affiliates
     </div>
   </div>
-  <div id="{{user.id}}" class="user-container" *ngFor="let user of users">
+  <div class="user-container" [class.blink]="blinkuser === user.id" *ngFor="let user of users">
     <div class="user-details">
       <div class="id">
         #{{user.id}}

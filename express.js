@@ -190,15 +190,10 @@ app.put('/ub/users/:id', upload.single('avatar'), (request, response) => {
 
 app.get('/ub/users/:id', (request, response) => {
   let id = request.params.id;
-  let userToGet;
-  for (let user of users) {
-    if (user.id === parseInt(id)) {
-      userToGet = user;
-      break;
-    }
-  }
-
-  response.send(userToGet);
+  let sql = 'SELECT * FROM users WHERE id=' + id;
+  db.get(sql, [], (error, row) => {
+    response.send(row);
+  });
 });
 
 app.delete('/ub/users/:id', (request, response) => {
